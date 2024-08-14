@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_svg: ^2.0.10+1
   country_picker: ^2.0.26
+  pinput: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +66,8 @@ flutter:
     - assets/images/onboarding_find_docs.svg
     - assets/images/onboarding_secure_doc.svg
     - assets/images/onboarding_share_image.svg
+    - assets/PaperSafeLogos/fill_inside_logo.png
+    - assets/images/login_svg.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
