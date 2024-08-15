@@ -27,6 +27,38 @@ class CommonWidgets {
         )),
       ),
     );
-    ;
+  }
+
+  Widget getTextField(
+      String title, double w, TextEditingController controller) {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Text(
+          title,
+          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+        ),
+      ),
+      Container(
+        width: w,
+        child: TextFormField(
+          controller: controller,
+          style: TextStyle(
+              fontSize: 18, letterSpacing: 1.4, fontWeight: FontWeight.w500),
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.grey[200],
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide:
+                    BorderSide(width: 2, color: ColorPallete.lightPrimary)),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide: BorderSide(width: 4, color: ColorPallete.primary)),
+          ),
+        ),
+      )
+    ]);
   }
 }
