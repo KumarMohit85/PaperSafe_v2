@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:paper_safe_v2/features/Auth/views/pages/otp_verification.dart';
 import 'package:paper_safe_v2/features/Onboarding/views/onboarding.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Onboarding(),
+      home: OtpVerification(),
     );
   }
 }

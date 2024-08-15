@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:paper_safe_v2/core/common_widgets.dart';
 import 'package:paper_safe_v2/core/pallete.dart';
 import 'package:paper_safe_v2/features/Auth/views/pages/enter_email.dart';
 import 'package:paper_safe_v2/features/Onboarding/views/page.dart';
@@ -113,26 +114,15 @@ class _OnboardingState extends State<Onboarding> {
   }
 
   Widget _getStarted(double h, double w) {
-    return InkWell(
-      onTap: () {
-        Navigator.of(context)
-            .pushReplacement(MaterialPageRoute(builder: (context) {
-          return EnterEmail();
-        }));
-      },
-      child: Container(
-        height: h * 0.06,
-        width: w * 0.5,
-        decoration: BoxDecoration(
-            color: ColorPallete.primary,
-            borderRadius: BorderRadius.circular(30)),
-        child: Center(
-            child: Text(
-          "Get Started",
-          style: TextStyle(
-              color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500),
-        )),
-      ),
-    );
+    return CommonWidgets().getButton(
+        title: "Get Started",
+        h: h * 0.06,
+        w: w * 0.5,
+        onTap: () {
+          Navigator.of(context)
+              .pushReplacement(MaterialPageRoute(builder: (context) {
+            return EnterEmail();
+          }));
+        });
   }
 }
