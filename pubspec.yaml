@@ -68,6 +68,10 @@ flutter:
     - assets/images/onboarding_share_image.svg
     - assets/PaperSafeLogos/fill_inside_logo.png
     - assets/images/login_svg.svg
+    - assets/images/Student.svg
+    - assets/images/Professional.svg
+    - assets/images/Other.svg
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -9,4 +9,10 @@ class ImagePaths {
   static const String fillInsideLogo = "${LOGO_PATH}fill_inside_logo.png";
   static const String loginSvgWeb = "${IMAGE_PATH_WEB}login_svg.svg";
   static const String loginSvg = "${IMAGE_PATH}login_svg.svg";
+  static const String studentSvgWeb = "${IMAGE_PATH_WEB}Student.svg";
+  static const String studentSvg = "${IMAGE_PATH}Student.svg";
+  static const String professionalSvgWeb = "${IMAGE_PATH_WEB}Professional.svg";
+  static const String professionalSvg = "${IMAGE_PATH}Professional.svg";
+  static const String otherSvgWeb = "${IMAGE_PATH_WEB}Other.svg";
+  static const String otherSvg = "${IMAGE_PATH}Other.svg";
 }

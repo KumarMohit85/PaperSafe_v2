@@ -61,4 +61,38 @@ class CommonWidgets {
       )
     ]);
   }
+
+  Widget getSelectedContainer(Widget child, bool isActive, double w1, double w2,
+      double h1, double h2, double r) {
+    return isActive
+        ? Container(
+            height: h1,
+            width: w1,
+            decoration: BoxDecoration(
+                border: Border.all(
+                  width: 2,
+                  color: ColorPallete.primary,
+                ),
+                borderRadius: BorderRadius.circular(r)),
+            child: Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Container(
+                height: h2,
+                width: w2,
+                decoration: BoxDecoration(
+                    color: ColorPallete.lightPrimary,
+                    borderRadius: BorderRadius.circular(r)),
+                child: Center(child: child),
+              ),
+            ),
+          )
+        : Container(
+            height: h2,
+            width: w2,
+            decoration: BoxDecoration(
+                color: ColorPallete.grey,
+                borderRadius: BorderRadius.circular(r)),
+            child: Center(child: child),
+          );
+  }
 }
