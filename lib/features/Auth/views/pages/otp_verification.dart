@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:paper_safe_v2/core/common_widgets.dart';
 import 'package:paper_safe_v2/core/image_paths.dart';
 import 'package:paper_safe_v2/core/pallete.dart';
+import 'package:paper_safe_v2/features/Auth/views/pages/create_user.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpVerification extends StatefulWidget {
@@ -20,6 +21,7 @@ class _OtpVerificationState extends State<OtpVerification> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: ColorPallete.white,
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 25),
@@ -75,7 +77,12 @@ class _OtpVerificationState extends State<OtpVerification> {
                     title: "Verify OTP",
                     h: height * 0.06,
                     w: width * 0.5,
-                    onTap: () {})),
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return UserInfo();
+                      }));
+                    })),
             SizedBox(
               height: height * 0.02,
             ),

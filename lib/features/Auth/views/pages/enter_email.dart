@@ -23,6 +23,7 @@ class _EnterEmailState extends State<EnterEmail> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: ColorPallete.white,
       body: Container(
         height: height,
