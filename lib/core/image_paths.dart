@@ -15,4 +15,10 @@ class ImagePaths {
   static const String professionalSvg = "${IMAGE_PATH}Professional.svg";
   static const String otherSvgWeb = "${IMAGE_PATH_WEB}Other.svg";
   static const String otherSvg = "${IMAGE_PATH}Other.svg";
+  static const String panCardFrameSvgWeb =
+      "${IMAGE_PATH_WEB}pan_card_frame.svg";
+  static const String panCardFrameSvg = "${IMAGE_PATH}pan_card_frame.svg";
+  static const String aadharCardFrameSvgWeb =
+      "${IMAGE_PATH_WEB}aadhar_dummy_svg.svg";
+  static const String aadharCardFrameSvg = "${IMAGE_PATH}aadhar_dummy_svg.svg";
 }
