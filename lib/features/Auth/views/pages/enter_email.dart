@@ -58,7 +58,7 @@ class _EnterEmailState extends State<EnterEmail> {
               )),
             ),
             Spacer(
-              flex: 1,
+              flex: 2,
             ),
             Flexible(
               flex: 3,

@@ -7,8 +7,10 @@ import 'package:paper_safe_v2/core/pallete.dart';
 import 'package:paper_safe_v2/features/YourDocuments/widgets/aadhar_frame.dart';
 import 'package:paper_safe_v2/features/YourDocuments/widgets/ad_frame.dart';
 import 'package:paper_safe_v2/features/YourDocuments/widgets/bar_button.dart';
+import 'package:paper_safe_v2/features/YourDocuments/widgets/end_drawer.dart';
 import 'package:paper_safe_v2/features/YourDocuments/widgets/pan_frame.dart';
 import 'package:paper_safe_v2/features/YourDocuments/widgets/square_button.dart';
+import 'package:paper_safe_v2/features/YourDocuments/widgets/start_drawer.dart';
 
 class YourDocumentsPage extends StatefulWidget {
   const YourDocumentsPage({super.key});
@@ -30,14 +32,8 @@ class _YourDocumentsPageState extends State<YourDocumentsPage> {
       child: Scaffold(
         key: _scaffoldKey,
         backgroundColor: ColorPallete.white,
-        drawer: Drawer(
-          backgroundColor: ColorPallete.white,
-          width: kIsWeb ? width * 0.1 : width * 0.7,
-        ),
-        endDrawer: Drawer(
-          backgroundColor: ColorPallete.white,
-          width: kIsWeb ? width * 0.1 : width * 0.7,
-        ),
+        drawer: StartDrawer(),
+        endDrawer: EndDrawer(),
         body: Container(
           margin: EdgeInsets.symmetric(horizontal: 0.08 * width),
           // color: Colors.amber,
@@ -56,7 +52,7 @@ class _YourDocumentsPageState extends State<YourDocumentsPage> {
                           },
                           icon: Icon(
                             Icons.account_circle,
-                            size: 40,
+                            size: 45,
                           )),
                       IconButton(
                           onPressed: () {
@@ -64,7 +60,7 @@ class _YourDocumentsPageState extends State<YourDocumentsPage> {
                           },
                           icon: Icon(
                             Icons.share,
-                            size: 40,
+                            size: 45,
                           ))
                     ],
                   )),
@@ -90,7 +86,7 @@ class _YourDocumentsPageState extends State<YourDocumentsPage> {
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: CarouselSlider(
                         options: CarouselOptions(
-                            aspectRatio: 2.25, viewportFraction: 0.93),
+                            aspectRatio: 2.4, viewportFraction: 0.93),
                         items: [AdFrame(), AdFrame()]),
                   )),
               Flexible(

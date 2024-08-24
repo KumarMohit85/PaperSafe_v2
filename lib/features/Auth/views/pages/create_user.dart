@@ -6,6 +6,7 @@ import 'package:paper_safe_v2/core/common_widgets.dart';
 import 'package:paper_safe_v2/core/image_paths.dart';
 import 'package:paper_safe_v2/core/pallete.dart';
 import 'package:paper_safe_v2/core/structs.dart';
+import 'package:paper_safe_v2/features/Home/views/homepage.dart';
 
 class UserInfo extends StatefulWidget {
   const UserInfo({super.key});
@@ -33,7 +34,25 @@ class _UserInfoState extends State<UserInfo> {
         context: context,
         firstDate: DateTime(1900),
         lastDate: DateTime(DateTime.now().year + 1),
-        initialDate: DateTime.now());
+        initialDate: DateTime.now(),
+        builder: (BuildContext context, Widget? child) {
+          return Theme(
+              data: Theme.of(context).copyWith(
+                  dialogBackgroundColor: ColorPallete.white,
+                  colorScheme: ColorScheme.light(
+                    primary:
+                        ColorPallete.lightPrimary, // Header background color
+                    onPrimary: Colors.white, // Header text color
+                    onSurface: Colors.black, // Body text color
+                  ),
+                  textButtonTheme: TextButtonThemeData(
+                    style: TextButton.styleFrom(
+                      foregroundColor:
+                          ColorPallete.lightPrimary, // Button text color
+                    ),
+                  )),
+              child: child!);
+        });
     if (_selected != null) {
       setState(() {
         selectedDate = _selected;
@@ -70,15 +89,16 @@ class _UserInfoState extends State<UserInfo> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: kIsWeb ? height * 0.03 : height * 0.05,
-            ),
+            if (!kIsWeb)
+              Spacer(
+                flex: 1,
+              ),
             Flexible(
                 flex: 1,
                 child: Text(
                   "Tell us more about you",
                   style: TextStyle(
-                      fontSize: 43, fontWeight: FontWeight.w700, height: 1),
+                      fontSize: 40, fontWeight: FontWeight.w700, height: 1),
                 )),
             SizedBox(
               height: height * 0.02,
@@ -241,7 +261,12 @@ class _UserInfoState extends State<UserInfo> {
                           title: "Next",
                           h: height * 0.06,
                           w: kIsWeb ? width * 0.15 : width * 0.4,
-                          onTap: () {}),
+                          onTap: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(builder: (context) {
+                              return Homepage();
+                            }));
+                          }),
                     )
                   ],
                 )),

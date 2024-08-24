@@ -9,7 +9,7 @@ class AdFrame extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 6.0),
       child: AspectRatio(
-        aspectRatio: 2,
+        aspectRatio: 2.4,
         child: Container(
           decoration: BoxDecoration(
               color: ColorPallete.grey,
