@@ -30,4 +30,14 @@ class ImagePaths {
   static const String ticketsLogo = "${IMAGE_PATH}tickets_logo_svg.svg";
   static const String idCardLogo = "${IMAGE_PATH}id_card_logo.svg";
   static const String articleLogo = "${IMAGE_PATH}article_logo_svg.svg";
+  static const String educationLogo = "${IMAGE_PATH}education_logo_svg.svg";
+  static const String healthHeartLogo =
+      "${IMAGE_PATH}health_heart_logo_svg.svg";
+  static const String indianRupeeLogo =
+      "${IMAGE_PATH}indian_rupee_logo_svg.svg";
+  static const String othersLogo = "${IMAGE_PATH}others_inventory_logo_svg.svg";
+  static const String vpnKeyLogo = "${IMAGE_PATH}vpn_key_logo_svg.svg";
+  static const String airplaneTicketLogo =
+      "${IMAGE_PATH}airplane_ticket_logo_svg.svg";
+  static const String darkOutlineLogo = "${LOGO_PATH}dark_outline_logo.png";
 }

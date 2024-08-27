@@ -82,7 +82,13 @@ flutter:
     - assets/images/backup_logo.svg
     - assets/images/tickets_logo_svg.svg
     - assets/images/article_logo_svg.svg
-    
+    - assets/images/education_logo_svg.svg
+    - assets/images/health_heart_logo_svg.svg
+    - assets/images/indian_rupee_logo_svg.svg
+    - assets/images/others_inventory_logo_svg.svg
+    - assets/images/vpn_key_logo_svg.svg
+    - assets/images/airplane_ticket_logo_svg.svg
+    - assets/PaperSafeLogos/dark_outline_logo.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

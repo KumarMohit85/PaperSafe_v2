@@ -10,7 +10,7 @@ class BarButton extends StatelessWidget {
       aspectRatio: 4.4,
       child: Container(
         decoration: BoxDecoration(
-            color: ColorPallete.lightPrimary,
+            color: ColorPallete.lightLightPrimary,
             borderRadius: BorderRadius.circular(40)),
         child: Center(
           child: Text("bar button"),

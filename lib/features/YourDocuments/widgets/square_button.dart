@@ -10,7 +10,7 @@ class SquareButton extends StatelessWidget {
       aspectRatio: 1,
       child: Container(
         decoration: BoxDecoration(
-            color: ColorPallete.lightPrimary,
+            color: ColorPallete.lightLightPrimary,
             borderRadius: BorderRadius.circular(20)),
       ),
     );

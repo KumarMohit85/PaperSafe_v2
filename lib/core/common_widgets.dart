@@ -183,4 +183,21 @@ class CommonWidgets {
           ),
         ));
   }
+
+  Widget getIconButton(
+      {required bool isActive,
+      required IconData icon,
+      required VoidCallback onPressed}) {
+    return Container(
+      decoration:
+          BoxDecoration(color: isActive ? ColorPallete.highlight : null),
+      child: IconButton(
+          onPressed: onPressed,
+          icon: Icon(
+            icon,
+            size: 40,
+            color: ColorPallete.primary,
+          )),
+    );
+  }
 }
