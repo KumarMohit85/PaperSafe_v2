@@ -21,4 +21,13 @@ class ImagePaths {
   static const String aadharCardFrameSvgWeb =
       "${IMAGE_PATH_WEB}aadhar_dummy_svg.svg";
   static const String aadharCardFrameSvg = "${IMAGE_PATH}aadhar_dummy_svg.svg";
+
+  static const String aadharLogo = "${IMAGE_PATH}aadhar_logo.svg";
+  static const String qrCodeLogo = "${IMAGE_PATH}qr_code_logo.svg";
+  static const String marksheet = "${IMAGE_PATH}marksheet.svg";
+  static const String creditCardLogo = "${IMAGE_PATH}credit_card_logo.svg";
+  static const String backupLogo = "${IMAGE_PATH}backup_logo.svg";
+  static const String ticketsLogo = "${IMAGE_PATH}tickets_logo_svg.svg";
+  static const String idCardLogo = "${IMAGE_PATH}id_card_logo.svg";
+  static const String articleLogo = "${IMAGE_PATH}article_logo_svg.svg";
 }

@@ -181,12 +181,6 @@ class _UserInfoState extends State<UserInfo> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 7.0),
-                      child: Text("Gender",
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w500)),
-                    ),
                     Row(
                       children: gender.values.map((gender g) {
                         return Padding(

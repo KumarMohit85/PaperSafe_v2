@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:paper_safe_v2/core/image_paths.dart';
 import 'package:paper_safe_v2/core/pallete.dart';
 
 class CommonWidgets {
@@ -71,36 +73,114 @@ class CommonWidgets {
   }
 
   Widget getSelectedContainer(Widget child, bool isActive, double w1, double w2,
-      double h1, double h2, double r) {
-    return isActive
-        ? Container(
-            height: h1,
-            width: w1,
-            decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2,
-                  color: ColorPallete.primary,
+      double h1, double h2, double r,
+      {String title = ""}) {
+    return Column(children: [
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Text(
+          title,
+          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+        ),
+      ),
+      isActive
+          ? Container(
+              height: h1,
+              width: w1,
+              decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 2,
+                    color: ColorPallete.primary,
+                  ),
+                  borderRadius: BorderRadius.circular(r)),
+              child: Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Container(
+                  height: h2,
+                  width: w2,
+                  decoration: BoxDecoration(
+                      color: ColorPallete.lightPrimary,
+                      borderRadius: BorderRadius.circular(r)),
+                  child: Center(child: child),
                 ),
-                borderRadius: BorderRadius.circular(r)),
-            child: Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: Container(
-                height: h2,
-                width: w2,
-                decoration: BoxDecoration(
-                    color: ColorPallete.lightPrimary,
-                    borderRadius: BorderRadius.circular(r)),
-                child: Center(child: child),
               ),
+            )
+          : Container(
+              height: h2,
+              width: w2,
+              decoration: BoxDecoration(
+                  color: ColorPallete.grey,
+                  borderRadius: BorderRadius.circular(r)),
+              child: Center(child: child),
             ),
-          )
-        : Container(
-            height: h2,
-            width: w2,
-            decoration: BoxDecoration(
-                color: ColorPallete.grey,
-                borderRadius: BorderRadius.circular(r)),
-            child: Center(child: child),
-          );
+    ]);
+  }
+
+  Widget getBarButton(
+      {required double height,
+      required String title,
+      required String svgPath}) {
+    return Container(
+      height: height,
+      decoration: BoxDecoration(
+          color: ColorPallete.lightLightPrimary,
+          borderRadius: BorderRadius.circular(40)),
+      child: Row(
+        children: [
+          Spacer(
+            flex: 1,
+          ),
+          Flexible(
+              flex: 3,
+              child: AspectRatio(
+                aspectRatio: 0.8,
+                child: SvgPicture.asset(svgPath),
+              )),
+          Spacer(
+            flex: 1,
+          ),
+          Flexible(
+              flex: 6,
+              child: Text(
+                title,
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                    color: ColorPallete.primary),
+              ))
+        ],
+      ),
+    );
+  }
+
+  Widget getSquareButton({required String title, required String svgPath}) {
+    return AspectRatio(
+        aspectRatio: 1.1,
+        child: Container(
+          decoration: BoxDecoration(
+              color: ColorPallete.lightLightPrimary,
+              borderRadius: BorderRadius.circular(16)),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 10.0, top: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Flexible(
+                    flex: 3,
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: SvgPicture.asset(svgPath),
+                    )),
+                Flexible(
+                  flex: 2,
+                  child: Text(
+                    title,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }

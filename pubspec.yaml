@@ -74,7 +74,14 @@ flutter:
     - assets/images/Other.svg
     - assets/images/pan_card_frame.svg
     - assets/images/aadhar_dummy_svg.svg
-
+    - assets/images/aadhar_logo.svg
+    - assets/images/id_card_logo.svg
+    - assets/images/qr_code_logo.svg
+    - assets/images/marksheet.svg
+    - assets/images/credit_card_logo.svg
+    - assets/images/backup_logo.svg
+    - assets/images/tickets_logo_svg.svg
+    - assets/images/article_logo_svg.svg
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
