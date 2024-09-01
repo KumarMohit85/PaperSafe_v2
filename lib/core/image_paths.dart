@@ -40,4 +40,7 @@ class ImagePaths {
   static const String airplaneTicketLogo =
       "${IMAGE_PATH}airplane_ticket_logo_svg.svg";
   static const String darkOutlineLogo = "${LOGO_PATH}dark_outline_logo.png";
+  static const String addCardSvg = "${IMAGE_PATH}add_card_svg.svg";
+  static const String addDocumentsSvg = "${IMAGE_PATH}add_documents_svg.svg";
+  static const String viewDocumentsSvg = "${IMAGE_PATH}view_docs_svg.svg";
 }

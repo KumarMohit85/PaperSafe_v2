@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:paper_safe_v2/core/common_widgets.dart';
 import 'package:paper_safe_v2/core/image_paths.dart';
 import 'package:paper_safe_v2/core/pallete.dart';
 import 'package:paper_safe_v2/features/YourDocuments/widgets/aadhar_frame.dart';
@@ -40,9 +41,9 @@ class _YourDocumentsPageState extends State<YourDocumentsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Spacer(flex: 1),
+              Spacer(flex: 3),
               Flexible(
-                  flex: 1,
+                  flex: 2,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -64,51 +65,63 @@ class _YourDocumentsPageState extends State<YourDocumentsPage> {
                           ))
                     ],
                   )),
+              Spacer(
+                flex: 1,
+              ),
               Flexible(
-                  flex: 1,
+                  flex: 2,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 12.0, top: 5),
+                    padding: const EdgeInsets.only(
+                      left: 12.0,
+                    ),
                     child: Text(
                       "Your Documents",
                       style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                          TextStyle(fontSize: 34, fontWeight: FontWeight.w600),
                     ),
                   )),
+              Spacer(
+                flex: 1,
+              ),
               Flexible(
-                  flex: 6,
+                  flex: 13,
                   child: CarouselSlider(
                       options: CarouselOptions(
                           aspectRatio: 1.5, viewportFraction: 0.93),
                       items: [AadharFrame(), PanFrame()])),
               Flexible(
-                  flex: 4,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5.0),
-                    child: CarouselSlider(
-                        options: CarouselOptions(
-                            aspectRatio: 2.4, viewportFraction: 0.93),
-                        items: [AdFrame(), AdFrame()]),
+                  flex: 8,
+                  child: CarouselSlider(
+                      options: CarouselOptions(
+                          aspectRatio: 2.4, viewportFraction: 0.93),
+                      items: [AdFrame(), AdFrame()])),
+              Spacer(
+                flex: 1,
+              ),
+              Flexible(
+                  flex: 8,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CommonWidgets().getSquareButton(
+                          title: "Add Card", svgPath: ImagePaths.addCardSvg),
+                      CommonWidgets().getSquareButton(
+                          title: "Add Docs",
+                          svgPath: ImagePaths.addDocumentsSvg),
+                    ],
                   )),
+              Spacer(
+                flex: 1,
+              ),
               Flexible(
                   flex: 4,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 15.0, vertical: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SquareButton(),
-                        SquareButton(),
-                      ],
-                    ),
-                  )),
-              Flexible(
-                  flex: 3,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 15.0, vertical: 10),
-                    child: BarButton(),
-                  ))
+                  child: CommonWidgets().getBarButton(
+                      height: height * 0.065,
+                      title: "View Docs",
+                      svgPath: ImagePaths.viewDocumentsSvg)),
+              Spacer(
+                flex: 1,
+              ),
             ],
           ),
         ),

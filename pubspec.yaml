@@ -89,6 +89,10 @@ flutter:
     - assets/images/vpn_key_logo_svg.svg
     - assets/images/airplane_ticket_logo_svg.svg
     - assets/PaperSafeLogos/dark_outline_logo.png
+    - assets/images/add_card_svg.svg
+    - assets/images/add_documents_svg.svg
+    - assets/images/view_docs_svg.svg
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

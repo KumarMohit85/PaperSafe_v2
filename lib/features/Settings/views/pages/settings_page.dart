@@ -23,7 +23,7 @@ class _SettingsPageState extends State<SettingsPage> {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Spacer(
-                flex: 3,
+                flex: 4,
               ),
               Flexible(
                   flex: 3,
