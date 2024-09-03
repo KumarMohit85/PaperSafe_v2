@@ -27,7 +27,8 @@ class _StartDrawerState extends State<StartDrawer> {
       TextEditingController(text: DateTime.now().year.toString());
 
   DateTime? selectedDate = DateTime.now();
-  gender _selectedGender = gender.male;
+  Gender _selectedGender = Gender.Male;
+  bool isEditingEnabled = false;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -94,7 +95,13 @@ class _StartDrawerState extends State<StartDrawer> {
                         child: Row(
                           children: [
                             Text("Edit"),
-                            IconButton(onPressed: () {}, icon: Icon(Icons.edit))
+                            IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    isEditingEnabled = !isEditingEnabled;
+                                  });
+                                },
+                                icon: Icon(Icons.edit))
                           ],
                         ),
                       ),
@@ -110,16 +117,19 @@ class _StartDrawerState extends State<StartDrawer> {
               // ),
               Flexible(
                   flex: 2,
-                  child: CommonWidgets().getTextField(
-                      "Your Name", "", width * 0.55, _nameController)),
+                  child: CommonWidgets().getSmallTextField(
+                      "Your Name", "", width * 0.55, _nameController,
+                      isEnabled: isEditingEnabled)),
               Flexible(
                   flex: 2,
-                  child: CommonWidgets().getTextField(
-                      "Mobile No.", "", width * 0.55, _mobileNumber)),
+                  child: CommonWidgets().getSmallTextField(
+                      "Mobile No.", "", width * 0.55, _mobileNumber,
+                      isEnabled: isEditingEnabled)),
               Flexible(
                   flex: 2,
-                  child: CommonWidgets().getTextField(
-                      "Email ID", "", width * 0.55, _emailController)),
+                  child: CommonWidgets().getSmallTextField(
+                      "Email ID", "", width * 0.55, _emailController,
+                      isEnabled: isEditingEnabled)),
               Flexible(
                   flex: 2,
                   child: Row(
@@ -129,18 +139,21 @@ class _StartDrawerState extends State<StartDrawer> {
                       ),
                       Flexible(
                         flex: 4,
-                        child: CommonWidgets().getTextField(
-                            "DOB", "Day", width * 0.16, _selectedDayController),
+                        child: CommonWidgets().getSmallTextField(
+                            "DOB", "Day", width * 0.16, _selectedDayController,
+                            isEnabled: isEditingEnabled),
                       ),
                       Flexible(
                         flex: 4,
-                        child: CommonWidgets().getTextField("", "Month",
-                            width * 0.18, _selectedMonthController),
+                        child: CommonWidgets().getSmallTextField(
+                            "", "Month", width * 0.18, _selectedMonthController,
+                            isEnabled: isEditingEnabled),
                       ),
                       Flexible(
                         flex: 4,
-                        child: CommonWidgets().getTextField(
-                            "", "Year", width * 0.23, _selectedYearController),
+                        child: CommonWidgets().getSmallTextField(
+                            "", "Year", width * 0.23, _selectedYearController,
+                            isEnabled: isEditingEnabled),
                       ),
                       Flexible(
                           flex: 2,
@@ -159,7 +172,7 @@ class _StartDrawerState extends State<StartDrawer> {
                       Flexible(
                         flex: 17,
                         child: Row(
-                          children: gender.values.map((gender g) {
+                          children: Gender.values.map((Gender g) {
                             return Padding(
                               padding: const EdgeInsets.only(right: 5.0),
                               child: InkWell(
@@ -168,25 +181,30 @@ class _StartDrawerState extends State<StartDrawer> {
                                     _selectedGender = g;
                                   });
                                 },
-                                child: g != gender.male
+                                child: g != Gender.Male
                                     ? CommonWidgets().getSelectedContainer(
                                         Text(g.toString().split('.').last),
                                         _selectedGender == g,
                                         kIsWeb ? width * 0.08 : width * 0.18,
                                         kIsWeb ? width * 0.07 : width * 0.18,
-                                        height * 0.06,
-                                        height * 0.065,
+                                        height * 0.05,
+                                        height * 0.055,
                                         30,
-                                      )
+                                        primary: isEditingEnabled
+                                            ? ColorPallete.lightPrimary
+                                            : ColorPallete.greyText)
                                     : CommonWidgets().getSelectedContainer(
                                         Text(g.toString().split('.').last),
                                         _selectedGender == g,
                                         kIsWeb ? width * 0.08 : width * 0.18,
                                         kIsWeb ? width * 0.07 : width * 0.18,
-                                        height * 0.06,
-                                        height * 0.065,
+                                        height * 0.05,
+                                        height * 0.055,
                                         30,
-                                        title: "Gender"),
+                                        title: "Gender",
+                                        primary: isEditingEnabled
+                                            ? ColorPallete.lightPrimary
+                                            : ColorPallete.greyText),
                               ),
                             );
                           }).toList(),
@@ -204,7 +222,13 @@ class _StartDrawerState extends State<StartDrawer> {
                       Flexible(
                           flex: 2,
                           child: TextButton(
-                              onPressed: () {}, child: Text("Update")))
+                              onPressed: () {},
+                              child: Text("Update",
+                                  style: TextStyle(
+                                    color: isEditingEnabled
+                                        ? ColorPallete.primary
+                                        : ColorPallete.greyText,
+                                  ))))
                     ],
                   )),
               Flexible(

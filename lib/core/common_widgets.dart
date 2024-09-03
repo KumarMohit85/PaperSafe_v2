@@ -72,9 +72,50 @@ class CommonWidgets {
     ]);
   }
 
+  Widget getSmallTextField(
+      String title, String hint, double w, TextEditingController controller,
+      {bool isEnabled = true}) {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+        child: Text(
+          title,
+          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+        ),
+      ),
+      Container(
+        height: 55,
+        width: w,
+        child: TextFormField(
+          controller: controller,
+          style: TextStyle(
+              fontSize: 15, letterSpacing: 1.4, fontWeight: FontWeight.w500),
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+            enabled: isEnabled,
+            hintText: hint,
+            hintStyle: TextStyle(
+                fontSize: 15,
+                fontStyle: FontStyle.italic,
+                color: ColorPallete.greyText),
+            filled: true,
+            fillColor: Colors.grey[200],
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide:
+                    BorderSide(width: 2, color: ColorPallete.lightPrimary)),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide(width: 4, color: ColorPallete.primary)),
+          ),
+        ),
+      )
+    ]);
+  }
+
   Widget getSelectedContainer(Widget child, bool isActive, double w1, double w2,
       double h1, double h2, double r,
-      {String title = ""}) {
+      {String title = "", Color primary = ColorPallete.lightLightPrimary}) {
     return Column(children: [
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -90,7 +131,7 @@ class CommonWidgets {
               decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
-                    color: ColorPallete.primary,
+                    color: primary,
                   ),
                   borderRadius: BorderRadius.circular(r)),
               child: Padding(
@@ -99,8 +140,7 @@ class CommonWidgets {
                   height: h2,
                   width: w2,
                   decoration: BoxDecoration(
-                      color: ColorPallete.lightPrimary,
-                      borderRadius: BorderRadius.circular(r)),
+                      color: primary, borderRadius: BorderRadius.circular(r)),
                   child: Center(child: child),
                 ),
               ),
@@ -198,6 +238,22 @@ class CommonWidgets {
             size: 40,
             color: ColorPallete.primary,
           )),
+    );
+  }
+
+  Widget getSnackbar(BuildContext context, String message) {
+    return SnackBar(
+      content: Text(message),
+      backgroundColor: ColorPallete.primary,
+      duration: const Duration(seconds: 2),
+    );
+  }
+
+  Widget getLoadingWidget() {
+    return Center(
+      child: CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation<Color>(ColorPallete.primary),
+      ),
     );
   }
 }

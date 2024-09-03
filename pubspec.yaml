@@ -39,6 +39,10 @@ dependencies:
   country_picker: ^2.0.26
   pinput: ^5.0.0
   carousel_slider: ^5.0.0
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+  fpdart: ^1.1.0
+  dio: ^5.7.0
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +54,10 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
+  riverpod_generator: ^2.4.3
+  build_runner: ^2.4.12
+  custom_lint: ^0.6.5
+  riverpod_lint: ^2.3.13
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

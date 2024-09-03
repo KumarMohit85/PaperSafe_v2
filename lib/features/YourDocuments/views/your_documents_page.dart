@@ -100,15 +100,18 @@ class _YourDocumentsPageState extends State<YourDocumentsPage> {
               ),
               Flexible(
                   flex: 8,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CommonWidgets().getSquareButton(
-                          title: "Add Card", svgPath: ImagePaths.addCardSvg),
-                      CommonWidgets().getSquareButton(
-                          title: "Add Docs",
-                          svgPath: ImagePaths.addDocumentsSvg),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CommonWidgets().getSquareButton(
+                            title: "Add Card", svgPath: ImagePaths.addCardSvg),
+                        CommonWidgets().getSquareButton(
+                            title: "Add Docs",
+                            svgPath: ImagePaths.addDocumentsSvg),
+                      ],
+                    ),
                   )),
               Spacer(
                 flex: 1,
@@ -129,3 +132,4 @@ class _YourDocumentsPageState extends State<YourDocumentsPage> {
     );
   }
 }
+
